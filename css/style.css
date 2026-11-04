@@ -1,0 +1,259 @@
+/* ==================
+  GENERELLT FÖR HELA SIDAN
+===================== */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --bg-color: #f0f5ef;
+    --accent-color-1: #d2d2c8;
+    --accent-color-2: #E0E2D7;
+    --accent-color-3: #eff1e6;
+    --accent-color-4: #c7c6c6;
+}
+
+body {
+    color: black;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    background-color: var(--bg-color);
+}  
+
+/* ==================
+  STORA GRUPPERINGAR
+===================== */
+
+/* Strukturerar hela sidan med flexbox (Header, Main, Footer) */
+#page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* gör att hela skärmen täcks på höjden */
+}
+
+header {
+    display: flex;
+    background-color: var(--accent-color-1);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0em 1.2em 0em 0.5em;
+    position: sticky; /* påminn om hur man fäster den högst upp */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    /* gör att det är som "dras ut" för att fylla skärmen */
+    flex: 1;
+    background-color: var(--bg-color);
+}
+
+footer {
+    display: flex;
+    background-color: var(--accent-color-1);
+    font-family: 'DM', sans-serif;
+    font-weight: 600;
+}
+
+h1{
+    font-size: 2em;
+    padding: 0.3em 0.3em 0em 0.3em;
+}
+
+h2, h3, h4, h5, h6 {
+    font-size: 1.7em;
+    padding: 0.3em 0.3em 0em 0.3em;
+}
+
+/* gör att bilderna aldrig blir större än parent-elementet och "block" att det inte blir "extra" space på sidorna/under */
+img {
+    display: block;
+    max-inline-size: 100%;
+}
+
+p {
+    padding: 0.3em 0.5em;
+}
+
+
+/* ==================
+  KLASSER OCH ID
+===================== */
+
+#nav-ul {
+    list-style-type: none;
+    display: none;
+    flex-direction: column;
+    /* Positionering under headernhelt till höger i utfällt läge */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--accent-color-1);
+    box-shadow: 0px 4px 10px #000000;
+    z-index: 1;
+    align-items: start;
+    padding: 0.4em 1em 0.4em 1em;
+    font-size: 1.4em;
+}
+
+/* när menyn är öppen */
+#nav-ul.is-open {
+    display: flex; 
+}
+
+#logotyp{
+    height: 100%;
+    max-height: 120px;
+    width: auto;
+    padding: 0;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+}
+
+#burger-menu {
+    display: block;
+    position: absolute;
+    right: 1.5em;
+}
+
+#hero {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.project-images {
+    /* anger hur bilderna organiseras/visas */
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em 1em 2em 1em;
+}
+
+.gallery-item {
+    /* alla bilder får samma storlek, behåller proportionerna och klipper bort överflöd */
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* separat för index-html eftersom jag inte vill ha muspekaren som pekande finger på dem (de här är ju inte klickbara förutom "Se mer" */
+.gallery-item-index {
+    /* alla bilder får samma storlek, behåller proportionerna och klipper bort överflöd */
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+ .gallery-item:hover,
+ .gallery-item:focus {
+     /* musen blir pekande finger */
+     cursor: pointer;
+ }
+
+.gallery {
+    display: block;
+}
+
+.modal {
+    /* så att modalen som default inte är synlig */
+     display: none;
+     /* så att bilden alltid hamnar på samma ställe, även vid scrollning */
+     position: fixed;
+     /* så att modal-bilden alltid hamnar överst */
+     z-index: 10;
+    /* topposition, eftersom position: fixed; */
+     padding-top: 100px;
+    /* sätter en mörk toning på hela bakgrunden så att bilden framtäder tydligare */
+     background-color: rgba(0, 0, 0, 0.9);
+     /* specificerar att det mörka mönstret ska börja helt överst, helt till vänster */
+     left: 0;
+     top: 0;
+    /* specificerar att det mörka ska täcka hela skärmen */
+     width: 100%;
+     height: 100%;
+     /* lägger till scroll inne i modulen om det skulle behövas */
+     overflow: auto;
+ }
+
+ .modal-content {
+    /* gör att modal-bilden blir max 90% av skärmen */
+     margin: auto;
+     display: block;
+     max-width: 90%;
+     max-height: 90%;
+ }
+
+ .close {
+    /* stänings"knappen" (som är ett x) */
+     position: absolute;
+     top: 15px;
+     right: 35px;
+     color: #f1f1f1;
+     font-size: 50px;
+     font-weight: bold;
+ }
+
+ /* när muspekaren hovrar över krysset eller när krysset markeras med tangentbordet */
+ .close:hover,
+ .close:focus {
+    /* då blir x grått  */
+     color: #bbb;
+     /* musen blir pekande finger */
+     cursor: pointer;
+ }
+
+ @media (min-width: 850px) {
+    header {
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-right: 1em;
+        padding-left: 1em;
+    }
+
+    header a{
+        color: white;
+        text-shadow: 2px 2px black;
+    }
+
+    #nav-ul {
+        display: flex;
+        flex-direction: row;
+        gap: 0.8em;
+        position: relative;
+        padding: 0;
+    }
+
+    #burger-menu {
+        display: none;
+    }
+
+    /* displaybilderna går från 2 till 4 i bredd på stor skärm */
+    .project-images {
+    grid-template-columns: 1fr 1fr;
+    }
+
+    #logotyp{
+        max-height: 150px;
+    }
+
+    #hero {
+        max-height: 400px;
+    }
+
+    p {
+        padding: 0.3em 3em;
+    }
+
+}
+
+
