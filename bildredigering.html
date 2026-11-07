@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bildredigering</title>
+    <script src="js/main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+        <!-- strukturerar hela sidan (header/main/footer) -->
+    <div id="page-container">
+        <!-- Header -->
+        <header>
+            <!-- logotypen -->
+            <a href="index.html"><img src="images/logo.svg" alt="" id="logotyp"></a>
+
+            <!-- nav-lista som döljs i mobilvy -->
+            <nav>
+                <ul id="nav-ul">
+                    <li class="nav-list"><a href="index.html">Startsida</a></li>
+                    <li class="nav-list"><a href="bildredigering.html">Bildredigering</a></li>
+                    <li class="nav-list"><a href="om-mig.html">Om mig</a></li>
+                </ul>
+            </nav>
+            <!-- hamburgermenyn -->
+            <a id="burger-menu"><img src="images/burgermenu-black.svg" alt="meny-ikon"></a>
+
+        </header>
+
+        <!-- Main -->
+        <main>
+            <section class="page-section">
+                <h1 class="uppercase-heading">Bildredigering</h1>
+
+                <h2>Före och efter</h2>
+
+                <p>Uppgiften bestod i att redigera minst tre bilder. Bilderna hade alla (minst) ett problem som skulle rättas till. De skulle också redigeras så att de blev enhetliga samt matchade sidan.</p>
+                <p>Jag valde att ha lite dovare och lugnare färger i mina bilder. Vanligtvis gillar jag att redigera mina foton (som ofta är i fjäll- eller träningsmiljö) så att det blir skarpa kontraster och bilderna ger ett mäktigt intryck.</p>
+                <p>På den här sidan ville jag prova motsatsen till det - jag försökte återskapa ett lugn i bilderna.</p>
+
+            </section>
+            
+            <section class="page-section">
+
+                <h2>Färgkorrigering</h2>
+                <div class="project-images">
+                    <figure>
+                        <img src="images/bildserie001-original.jpg" alt="flera båthus i olika färger som ger ett grått intryck">
+                        <figcaption>Oredigerad bild</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/bildserie001-redigerad.jpg" alt="flera båthus i olika färger, bild redigerad så att den har mer styrka i färgerna">
+                        <figcaption>Redigerad bild</figcaption>
+                    </figure>
+                </div>
+
+                <p>Här har jag framförallt vridit upp mättnaden och kontrasten i fotot. Jag har även justerat färgbalansen något, samt dragit upp ljusstyrkan marginellt. </p>
+                <p>Jag har jobbat i olika masker och lager för att allt ska kunna göras ogjort om det hade behövts.</p>
+            </section>
+
+                        <section class="page-section">
+
+                <h2>Borttagning av objekt</h2>
+                <div class="project-images">
+                    <figure>
+                        <img src="images/bildserie002-original.jpg" alt="orientalisk byggnad med starka färger och ett finger i vägen för kameralinsen">
+                        <figcaption>Oredigerad bild</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/bildserie002-redigerad.jpg" alt="orientalisk byggnad med dovare färger och fingret är borttaget">
+                        <figcaption>Redigerad bild</figcaption>
+                    </figure>
+                </div>
+
+                <p>Här har fingret tagits bort i olika steg. Först använde jag lappverktyget (Patch Tool) för att framförallt få bort den del som var över himlen. Efter det använde jag klonverktyget för att få till detaljerna i byggnden. Jag fick inte till det genom att dra verktyget fram och tillbaka, utan fick bäst resultat av att ta små bitar åt gången och klona dem till motsvarande ställe längre och längre ut mot vänsterkanten.</p>
+               <p>Färgerna i denna bild var väldigt mastiga, så efter att fingret var borttaget fick jag jobba med att tona ner färgerna så att det skulle passa bättre in med de andra bilderna. Jag tog ner mättnaden marginellt, drog ner det röda lite, drog ner kontrasten och ljushet rejält och avslutade med att justera högdagrar där skuggorna blev betydligt ljusare.</p>
+               <p>Alla färgjusteringar gjordes i masker, så att de lätt skulle kunna tas bort igen vid behov. </p>
+
+            </section>
+            
+            <section class="page-section">
+
+                <h2>Kattögat</h2>
+                <div class="project-images">
+                    <figure>
+                        <img src="images/bildserie003-original.jpg" alt="brun katt med ett lila öga">
+                        <figcaption>Oredigerad bild</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/bildserie003-redigerad.jpg" alt="brun katt där det lila ögat är korrigerat så att båda ögonen är lika">
+                        <figcaption>Redigerad bild</figcaption>
+                    </figure>
+                </div>
+
+                <p>Först tänkte jag färglägga ögat, men jag ville prova att använda lappverktygets "target-funktion" istället. Jag flyttade det vänstra ögat så att det hamnade över det vänstra. Sedan justerade jag ögats vinkel så att det passade bättre. Jag avslutade med att jämna ut övergångarna med klonverktyget. </p>
+
+                <p>Kontrast och mättnad drogs ner för att matcha resterande bilder.</p>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+      <footer>
+            <a href="index.html" ><img src="images/logo.svg" alt="" id="footer-logo"></a>    
+            <p>DT200G Grafisk teknik, Laboration 1.2, av Alexandra Nilsson 2026</p>
+        </footer>
+
+    </div>
+</body>
+</html>

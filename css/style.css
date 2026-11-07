@@ -27,7 +27,7 @@ body {
   STORA GRUPPERINGAR
 ===================== */
 
-/* Strukturerar hela sidan med flexbox (Header, Main, Footer) */
+/* Strukturerar hela sidan med flexbox */
 #page-container {
     display: flex;
     flex-direction: column;
@@ -54,8 +54,10 @@ main {
 footer {
     display: flex;
     background-color: var(--accent-color-1);
-    font-family: 'DM', sans-serif;
     font-weight: 600;
+    min-height: 100px;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -102,10 +104,14 @@ img {
 }
 
 #logotyp{
+    max-height: 120px;
+}
+
+#footer-logo{
     height: 100%;
     max-height: 120px;
-    width: auto;
-    padding: 0;
+    min-width: 65px;
+    padding-left: 10px;
 }
 
 .uppercase-heading {
@@ -115,10 +121,9 @@ img {
     padding: 3em 20px 0 20px;
 }
 
-header a {
+header a, footer a {
     color: black;
     text-decoration: none;
-    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
 }
 
@@ -142,78 +147,20 @@ header a {
     padding: 1em 1em 2em 1em;
 }
 
-.gallery-item {
-    /* alla bilder får samma storlek, behåller proportionerna och klipper bort överflöd */
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
+.startpage-images {
+    border-radius: 15px;
 }
 
-/* separat för index-html eftersom jag inte vill ha muspekaren som pekande finger på dem (de här är ju inte klickbara förutom "Se mer" */
-.gallery-item-index {
-    /* alla bilder får samma storlek, behåller proportionerna och klipper bort överflöd */
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
+ .page-section {
+    border-bottom: 2px solid var(--accent-color-dark);
+    padding-top: 2em;
+    padding-bottom: 2em;
+ }
+
+.project-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
-
- .gallery-item:hover,
- .gallery-item:focus {
-     /* musen blir pekande finger */
-     cursor: pointer;
- }
-
-.gallery {
-    display: block;
-}
-
-.modal {
-    /* så att modalen som default inte är synlig */
-     display: none;
-     /* så att bilden alltid hamnar på samma ställe, även vid scrollning */
-     position: fixed;
-     /* så att modal-bilden alltid hamnar överst */
-     z-index: 10;
-    /* topposition, eftersom position: fixed; */
-     padding-top: 100px;
-    /* sätter en mörk toning på hela bakgrunden så att bilden framtäder tydligare */
-     background-color: rgba(0, 0, 0, 0.9);
-     /* specificerar att det mörka mönstret ska börja helt överst, helt till vänster */
-     left: 0;
-     top: 0;
-    /* specificerar att det mörka ska täcka hela skärmen */
-     width: 100%;
-     height: 100%;
-     /* lägger till scroll inne i modulen om det skulle behövas */
-     overflow: auto;
- }
-
- .modal-content {
-    /* gör att modal-bilden blir max 90% av skärmen */
-     margin: auto;
-     display: block;
-     max-width: 90%;
-     max-height: 90%;
- }
-
- .close {
-    /* stänings"knappen" (som är ett x) */
-     position: absolute;
-     top: 15px;
-     right: 35px;
-     color: #f1f1f1;
-     font-size: 50px;
-     font-weight: bold;
- }
-
- /* när muspekaren hovrar över krysset eller när krysset markeras med tangentbordet */
- .close:hover,
- .close:focus {
-    /* då blir x grått  */
-     color: #bbb;
-     /* musen blir pekande finger */
-     cursor: pointer;
- }
 
  .page-links {
     /* behövs för att pilen ska hamna på samma rad som länk-texten */
@@ -229,11 +176,6 @@ header a {
  .page-links img {
   /* behövs för att pilen ska hamna på samma rad som länk-texten */
     display: inline-block;
- }
-
- .page-section {
-    border-bottom: 2px solid var(--accent-color-dark);
-    padding-bottom: 10px;
  }
 
  @media (min-width: 850px) {
@@ -258,22 +200,16 @@ header a {
         display: none;
     }
 
-    /* displaybilderna går från 2 till 4 i bredd på stor skärm */
-    .project-images {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    #logotyp {
+        max-height: 150px;
     }
 
-    #logotyp{
-        max-height: 150px;
+    #footer-logo{
+        max-height: 100px;
     }
 
     #hero {
         max-height: 600px;
-    }
-
-    p {
-        padding: 0.3em 3em;
     }
 
 }
