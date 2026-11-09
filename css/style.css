@@ -154,6 +154,7 @@ header a, footer a {
 
 .startpage-images {
     border-radius: 15px;
+    max-width: 400px;
 }
 
  .page-section {
@@ -165,6 +166,15 @@ header a, footer a {
 .project-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.index-img-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+    padding-top: 2em;
 }
 
  .page-links {
@@ -182,6 +192,20 @@ header a, footer a {
   /* behövs för att pilen ska hamna på samma rad som länk-texten */
     display: inline-block;
  }
+
+ .direction-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+ }
+
+ #portrait {
+    min-width: 200px;
+ }
+
 
  @media (min-width: 850px) {
     header {
