@@ -155,6 +155,7 @@ header a, footer a {
 .startpage-images {
     border-radius: 15px;
     max-width: 400px;
+    object-fit: cover;
 }
 
  .page-section {
