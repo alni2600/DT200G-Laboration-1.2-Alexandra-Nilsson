@@ -177,6 +177,10 @@ header a, footer a {
     padding-top: 2em;
 }
 
+.index-img-container img {
+    object-fit: cover;
+}
+
  .page-links {
     /* behövs för att pilen ska hamna på samma rad som länk-texten */
     display: inline-flex; 
